@@ -19,3 +19,7 @@ export interface Show {
   status: string
   language: string
 }
+
+export interface ShowsByGenre {
+  [genre: string]: Show[]
+}
