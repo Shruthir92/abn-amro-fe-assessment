@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ShowCard from '../components/showCard.vue'
-import type { Show } from '../types/show.ts'
+import ShowCard from './ShowCard.vue'
+import type { Show } from '../types/show'
 
 defineProps<{
   genre: string

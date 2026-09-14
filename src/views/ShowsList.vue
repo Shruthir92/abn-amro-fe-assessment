@@ -2,7 +2,7 @@
 import { onMounted, computed } from 'vue'
 import { useShows } from '../composables/useShows'
 import { groupShowsByGenre} from '../utils/index'
-import ShowGenre from '../components/showGenre.vue'
+import ShowGenre from '../components/ShowGenre.vue'
 
 const { fetchShows, shows, isLoading, error } = useShows()
 
