@@ -11,3 +11,13 @@ export async function getShows(): Promise<Show[]> {
 
   return response.json()
 }
+
+export async function getShowById(id: number): Promise<Show> {
+  const response = await fetch(`${BASE_URL}/shows/${id}`)
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch TV show')
+  }
+
+  return response.json()
+}
