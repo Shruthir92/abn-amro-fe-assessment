@@ -1,5 +1,44 @@
-# Vue 3 + TypeScript + Vite
+# TV Shows App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A responsive TV Shows application built with Vue 3 and TypeScript.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Features
+
+- Browse TV shows grouped by genre
+- Shows sorted by rating
+- Search TV shows
+- View detailed information about a selected show
+- Responsive design
+- Loading and error handling
+
+## Tech Stack
+
+- Vue 3
+- TypeScript
+- Vite
+- Vue Router
+- TVMaze API
+
+## Not Implemented
+
+Due to time constraints, the following improvements were not completed:
+
+- Unit tests
+- Mobile responsiveness and optimization
+
+## Getting Started
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run the application
+
+```bash
+npm run dev
+```
+
+
+
