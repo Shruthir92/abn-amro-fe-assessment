@@ -35,7 +35,7 @@ onMounted(() => {
 
 <template>
   <main class="show-details">
-    <RouterLink to="/">
+    <RouterLink to="/" class="back-link">
       ← Back to shows
     </RouterLink>
 
@@ -55,25 +55,27 @@ onMounted(() => {
         v-if="show.image?.original"
         :src="show.image.original"
         :alt="show.name"
+        class="show-details__image"
       />
 
-      <div>
+      <div class="show-details__info">
         <h1>{{ show.name }}</h1>
 
-        <p>
+        <p class="show-details__rating">
           ⭐ {{ show.rating.average ?? 'N/A' }}
         </p>
 
-        <p>
+        <p class="show-details__genres">
           {{ show.genres.join(' · ') }}
         </p>
 
         <div
           v-if="show.summary"
           v-html="show.summary"
+          class="show-details__summary"
         />
 
-        <dl>
+        <dl class="show-details__metadata">
           <dt>Status</dt>
           <dd>{{ show.status }}</dd>
 
@@ -87,3 +89,63 @@ onMounted(() => {
     </article>
   </main>
 </template>
+<style scoped>
+.show-details {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 32px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.show-details__content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.show-details__image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.show-details__info h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.show-details__rating {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.show-details__genres {
+  margin-bottom: 24px;
+}
+
+.show-details__summary {
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.show-details__metadata {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px 16px;
+}
+
+.show-details__metadata dt {
+  font-weight: 600;
+}
+
+.show-details__metadata dd {
+  margin: 0;
+}
+</style>

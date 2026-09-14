@@ -31,6 +31,8 @@ defineProps<{
   width: 160px;
   flex-shrink: 0;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .show-card img {
