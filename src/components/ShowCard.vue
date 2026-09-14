@@ -24,7 +24,37 @@ defineProps<{
 </template>
 <style scoped>
 .show-card {
-  text-decoration: none;
-  color: inherit;
+  width: 160px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.show-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.show-card__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  background: #eee;
+}
+
+.show-card__content {
+  padding-top: 8px;
+}
+
+.show-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.show-card p {
+  margin: 4px 0 0;
 }
 </style>
