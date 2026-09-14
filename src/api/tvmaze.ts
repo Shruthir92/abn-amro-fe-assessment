@@ -21,3 +21,22 @@ export async function getShowById(id: number): Promise<Show> {
 
   return response.json()
 }
+
+export interface SearchResult {
+  score: number
+  show: Show
+}
+
+export async function searchShows(
+  query: string,
+): Promise<SearchResult[]> {
+  const response = await fetch(
+    `${BASE_URL}/search/shows?q=${encodeURIComponent(query)}`,
+  )
+
+  if (!response.ok) {
+    throw new Error('Failed to search TV shows')
+  }
+
+  return response.json()
+}

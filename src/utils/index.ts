@@ -24,3 +24,18 @@ export function groupShowsByGenre(shows: Show[]): ShowsByGenre {
 
   return groupedShows
 }
+
+export function debounce<T extends (...args: any[]) => void>(
+  callback: T,
+  delay = 300,
+) {
+  let timeoutId: ReturnType<typeof setTimeout>
+
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeoutId)
+
+    timeoutId = setTimeout(() => {
+      callback(...args)
+    }, delay)
+  }
+}
